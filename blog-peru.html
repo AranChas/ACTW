@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Perú en 15 días: nuestra ruta de Lima a Machu Picchu | AranChasingTheWorld</title>
+
+<meta name="description" content="Itinerario día a día de nuestra ruta de 15 días por Perú: de Lima a Machu Picchu pasando por Paracas, Huacachina, Arequipa, el Cañón del Colca y Puno.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#572364;
+    --secondary:#D4AF37;
+    --dark:#1a1a1a;
+    --light:#ffffff;
+    --gray:#f5f7fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#333;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(102, 51, 153, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:800;
+    font-family:'Montserrat',sans-serif;
+    text-decoration:none;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* ARTICLE HERO */
+
+.article-hero{
+    min-height:64vh;
+    margin-top:0;
+    background:
+    linear-gradient(rgba(20,8,30,.35),rgba(20,8,30,.65)),
+    url('img/peru-dia1-barranco.jpg');
+    background-size:cover;
+    background-position:center 25%;
+    display:flex;
+    align-items:flex-end;
+    color:white;
+    padding-top:120px;
+}
+
+.article-hero-content{
+    max-width:780px;
+    padding-bottom:60px;
+}
+
+.article-hero .eyebrow{
+    display:inline-block;
+    color:var(--secondary);
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.8rem;
+    margin-bottom:18px;
+}
+
+.article-hero h1{
+    font-family:'Montserrat';
+    font-size:2.8rem;
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.article-meta{
+    color:rgba(255,255,255,.8);
+    font-size:.95rem;
+}
+
+.article-meta span:not(:last-child)::after{
+    content:"•";
+    margin:0 10px;
+    color:var(--secondary);
+}
+
+/* BREADCRUMB */
+
+.breadcrumb{
+    padding:20px 0;
+    background:var(--gray);
+}
+
+.breadcrumb a{
+    color:var(--primary);
+    text-decoration:none;
+    font-weight:600;
+    font-size:.95rem;
+}
+
+.breadcrumb a:hover{
+    color:var(--secondary);
+}
+
+/* ARTICLE BODY */
+
+.article-body{
+    padding:70px 0;
+}
+
+.article-content{
+    max-width:700px;
+    margin:auto;
+}
+
+.article-content > p{
+    margin-bottom:22px;
+    font-size:1.08rem;
+    color:#333;
+}
+
+.day-marker{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    margin:55px 0 28px;
+}
+
+.day-number{
+    font-family:'Montserrat';
+    font-weight:800;
+    font-size:1.6rem;
+    color:var(--secondary);
+    border:2px solid var(--secondary);
+    border-radius:50%;
+    width:56px;
+    height:56px;
+    flex:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.day-marker h2{
+    font-family:'Montserrat';
+    font-size:1.5rem;
+    color:var(--primary);
+}
+
+.day-marker .day-sub{
+    display:block;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:#999;
+    margin-bottom:4px;
+}
+
+figure{
+    margin:30px 0;
+}
+
+figure img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    display:block;
+}
+
+figcaption{
+    margin-top:10px;
+    font-size:.88rem;
+    color:#888;
+    text-align:center;
+}
+
+.continues{
+    margin-top:50px;
+    padding:25px;
+    background:var(--gray);
+    border-left:4px solid var(--secondary);
+    border-radius:8px;
+    font-style:italic;
+    color:#555;
+}
+
+/* CTA */
+
+.cta-box{
+    margin-top:60px;
+    padding:45px;
+    background:linear-gradient(135deg, var(--primary), #2e1238);
+    border-radius:18px;
+    text-align:center;
+    color:white;
+}
+
+.cta-box h3{
+    font-family:'Montserrat';
+    font-size:1.5rem;
+    margin-bottom:14px;
+}
+
+.cta-box p{
+    color:rgba(255,255,255,.85);
+    margin-bottom:24px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+/* FOOTER */
+
+footer{
+    background:#061d46;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.article-hero h1{
+    font-size:2rem;
+}
+
+.nav-links{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    background:var(--primary);
+    width:250px;
+    flex-direction:column;
+    padding:30px;
+    transition:.4s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+<a href="aran.html" class="logo">Aran<span>ChasingTheWorld</span></a>
+
+<nav class="nav-links" id="navLinks">
+<a href="aran.html#inicio">Inicio</a>
+<a href="aran.html#tours">Tours</a>
+<a href="aran.html#destinos">Destinos</a>
+<a href="aran.html#experiencias">Experiencias</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="aran.html#contacto">Contacto</a>
+</nav>
+
+<div class="menu-btn" id="menuBtn">☰</div>
+</div>
+</header>
+
+<section class="article-hero">
+<div class="container article-hero-content">
+<div class="eyebrow">Sudamérica · Diario de viaje</div>
+<h1>Perú en 15 días: nuestra ruta de Lima a Machu Picchu</h1>
+<div class="article-meta">
+<span>Mayo 2026</span>
+<span>15 días</span>
+<span>Lima → Cusco</span>
+</div>
+</div>
+</section>
+
+<div class="breadcrumb">
+<div class="container">
+<a href="blog.html">← Volver al blog</a>
+</div>
+</div>
+
+<section class="article-body">
+<div class="container article-content">
+
+<p>Perú era uno de esos viajes que llevábamos tiempo imaginando: ciudades coloniales, paisajes andinos, lagunas imposibles, una de las mejores gastronomías del mundo y, por supuesto, Machu Picchu, una de las maravillas del mundo. Al final diseñamos una ruta de 15 días que nos llevó desde Lima hasta Cusco, pasando por Paracas, Huacachina, Arequipa, el Cañón del Colca y Puno.</p>
+
+<p>Fue un viaje muy completo, con bastante movimiento, madrugones y algún bus nocturno, pero también con momentos que se quedan grabados para siempre: navegar junto a las Islas Ballestas, ver el contraste entre oasis y dunas en Huacachina, amanecer rumbo a Humantay, bellas ciudades llenas de historia, caminar entre montañas de colores y terminar en una de las maravillas del mundo.</p>
+
+<p>Si estás pensando en hacer una ruta parecida, aquí te contamos nuestro itinerario por Perú día a día.</p>
+
+<div class="day-marker">
+<div class="day-number">01</div>
+<div>
+<span class="day-sub">Día 1</span>
+<h2>Llegada a Lima</h2>
+</div>
+</div>
+
+<p>Llegamos a Lima sobre las 19 h con 3 h de retraso y desde el aeropuerto fuimos en taxi hasta Barranco, uno de los barrios con más encanto de la ciudad donde nos alojamos.</p>
+
+<figure>
+<img src="img/peru-dia1-vuelo-lima.jpg" alt="Panel de salidas del vuelo a Lima">
+<figcaption>El vuelo, con retraso incluido, antes de embarcar hacia Lima.</figcaption>
+</figure>
+
+<p>Al llegar tan tarde no tuvimos mucho tiempo de explorar el barrio pero pudimos callejear y ver su ambiente relajado, calles con personalidad y esa mezcla entre bohemio y costero que hace que Lima entre poco a poco.</p>
+
+<figure>
+<img src="img/peru-dia1-barranco.jpg" alt="Cartel de Barranco, Lima, Perú">
+<figcaption>El icónico cartel de Barranco, nuestra primera parada en Lima.</figcaption>
+</figure>
+
+<p>Estábamos hambrientos y nuestro primer contacto con la comida limeña fueron los anticuchos, que nos sorprendieron gratamente: suaves, tiernos y jugosos, ¡todo un descubrimiento culinario! También probamos otras cosas en los puestos callejeros con la, ya imprescindible desde ese momento, cerveza Cusqueña.</p>
+
+<div class="continues">
+Continuará... Próximamente añadiremos el resto de días de la ruta: Paracas, Huacachina, Arequipa, el Cañón del Colca, Puno y, por supuesto, Machu Picchu.
+</div>
+
+<div class="cta-box">
+<h3>¿Te apetece tu propia aventura?</h3>
+<p>Diseñamos rutas y tours a medida con el mismo cuidado con el que vivimos cada uno de nuestros viajes.</p>
+<a href="aran.html#contacto" class="btn btn-primary">Cuéntanos tu viaje</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>
+© 2026 AranChasingTheWorld | Persiguiendo experiencias, descubriendo el mundo.
+</p>
+</footer>
+
+<script>
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+</script>
+
+</body>
+</html>

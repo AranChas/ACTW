@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Blog de Viajes | AranChasingTheWorld</title>
+
+<meta name="description" content="Diario de viajes de AranChasingTheWorld: rutas, itinerarios y experiencias reales por España, Europa y el resto del mundo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#572364;
+    --secondary:#D4AF37;
+    --dark:#1a1a1a;
+    --light:#ffffff;
+    --gray:#f5f7fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#333;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(102, 51, 153, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:800;
+    font-family:'Montserrat',sans-serif;
+    text-decoration:none;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a.active,
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* BLOG HERO */
+
+.blog-hero{
+    min-height:55vh;
+    margin-top:0;
+    padding-top:160px;
+    padding-bottom:70px;
+    background:
+    radial-gradient(circle at 15% 20%, rgba(212,175,55,.18), transparent 45%),
+    linear-gradient(135deg, #572364 0%, #2e1238 100%);
+    color:white;
+    display:flex;
+    align-items:center;
+}
+
+.blog-hero .eyebrow{
+    display:inline-block;
+    color:var(--secondary);
+    font-weight:600;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:.8rem;
+    margin-bottom:18px;
+}
+
+.blog-hero h1{
+    font-family:'Montserrat';
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+.blog-hero p{
+    max-width:560px;
+    font-size:1.1rem;
+    color:rgba(255,255,255,.85);
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+    font-family:'Montserrat';
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* POSTS GRID */
+
+.posts-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:35px;
+}
+
+.post-card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+    text-decoration:none;
+    color:inherit;
+    display:block;
+}
+
+.post-card:hover{
+    transform:translateY(-10px);
+}
+
+.post-card img{
+    width:100%;
+    height:260px;
+    object-fit:cover;
+}
+
+.post-card-content{
+    padding:25px;
+}
+
+.post-tag{
+    display:inline-block;
+    background:rgba(87,35,100,.08);
+    color:var(--primary);
+    font-size:.78rem;
+    font-weight:600;
+    letter-spacing:.5px;
+    text-transform:uppercase;
+    padding:5px 12px;
+    border-radius:50px;
+    margin-bottom:14px;
+}
+
+.post-card h3{
+    color:var(--primary);
+    font-family:'Montserrat';
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+.post-card p{
+    color:#666;
+    font-size:.95rem;
+    margin-bottom:16px;
+}
+
+.post-date{
+    font-size:.85rem;
+    color:#999;
+}
+
+.read-more{
+    color:var(--secondary);
+    font-weight:600;
+    font-size:.95rem;
+}
+
+.coming-soon{
+    border:2px dashed #ddd;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#999;
+    padding:40px 25px;
+    min-height:260px;
+    font-weight:500;
+}
+
+/* FOOTER */
+
+footer{
+    background:#061d46;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+footer a{
+    color:var(--secondary);
+    text-decoration:none;
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.blog-hero h1{
+    font-size:2.2rem;
+}
+
+.nav-links{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    background:var(--primary);
+    width:250px;
+    flex-direction:column;
+    padding:30px;
+    transition:.4s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+<a href="aran.html" class="logo">Aran<span>ChasingTheWorld</span></a>
+
+<nav class="nav-links" id="navLinks">
+<a href="aran.html#inicio">Inicio</a>
+<a href="aran.html#tours">Tours</a>
+<a href="aran.html#destinos">Destinos</a>
+<a href="aran.html#experiencias">Experiencias</a>
+<a href="blog.html" class="active">Blog</a>
+<a href="aran.html#contacto">Contacto</a>
+</nav>
+
+<div class="menu-btn" id="menuBtn">☰</div>
+</div>
+</header>
+
+<section class="blog-hero">
+<div class="container">
+<div class="eyebrow">Diario de viaje</div>
+<h1>Historias desde la carretera</h1>
+<p>Relatos, itinerarios y aprendizajes de nuestros propios viajes — los mismos que inspiran las rutas que diseñamos para ti.</p>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+
+<div class="posts-grid">
+
+<a href="blog-peru.html" class="post-card">
+<img src="img/peru-dia1-barranco.jpg" alt="Barranco, Lima, Perú">
+<div class="post-card-content">
+<span class="post-tag">Sudamérica</span>
+<h3>Perú en 15 días: nuestra ruta de Lima a Machu Picchu</h3>
+<p>De Lima a Cusco pasando por Paracas, Huacachina, Arequipa, el Cañón del Colca y Puno: así fue nuestro itinerario día a día.</p>
+<div class="post-date">Mayo 2026</div>
+<div class="read-more" style="margin-top:12px;">Leer el itinerario completo →</div>
+</div>
+</a>
+
+<div class="coming-soon">Próximamente: más rutas y destinos</div>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>
+© 2026 AranChasingTheWorld | Persiguiendo experiencias, descubriendo el mundo.
+</p>
+</footer>
+
+<script>
+
+// MENU MOBILE
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// SCROLL ANIMATION
+
+function reveal(){
+
+const reveals = document.querySelectorAll('.reveal');
+
+reveals.forEach(el=>{
+
+const windowHeight = window.innerHeight;
+const elementTop = el.getBoundingClientRect().top;
+const visible = 120;
+
+if(elementTop < windowHeight - visible){
+el.classList.add('active');
+}
+
+});
+}
+
+window.addEventListener('scroll', reveal);
+reveal();
+
+</script>
+
+</body>
+</html>

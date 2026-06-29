@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AranChasingTheWorld | Tours por España y Europa</title>
+
+<meta name="description" content="Descubre España y Europa con AranChasingTheWorld. Tours guiados, experiencias únicas, viajes personalizados y aventuras inolvidables.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#572364;
+    --secondary:#D4AF37;
+    --dark:#1a1a1a;
+    --light:#ffffff;
+    --gray:#f5f7fa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#333;
+    line-height:1.6;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HEADER */
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(102, 51, 153, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 0;
+}
+
+.logo{
+    color:white;
+    font-size:1.4rem;
+    font-weight:800;
+    font-family:'Montserrat',sans-serif;
+}
+
+.logo span{
+    color:var(--secondary);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--secondary);
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    color:white;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url('https://img.locationscout.net/images/2016-10/godafoss-the-devine-waterfall-iceland_l.jpeg');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    color:white;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-family:'Montserrat';
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    text-decoration:none;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--secondary);
+    color:black;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:black;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:2.5rem;
+    color:var(--primary);
+    font-family:'Montserrat';
+}
+
+.section-title p{
+    color:#666;
+}
+
+/* ABOUT */
+
+.about{
+    background:var(--gray);
+}
+
+.about-content{
+    text-align:center;
+    max-width:850px;
+    margin:auto;
+}
+
+/* TOURS */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+    color:var(--primary);
+}
+
+.price{
+    color:var(--secondary);
+    font-weight:bold;
+    margin-top:10px;
+}
+
+/* DESTINOS */
+
+.destinations{
+    background:var(--gray);
+}
+
+.destination-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.destination{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    text-align:center;
+    font-weight:600;
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+}
+
+/* EXPERIENCIAS */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.feature{
+    text-align:center;
+    padding:25px;
+}
+
+.feature h3{
+    color:var(--primary);
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+    border-radius:12px;
+}
+
+/* TESTIMONIOS */
+
+.testimonials{
+    background:var(--gray);
+}
+
+.testimonial-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.testimonial{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+}
+
+.stars{
+    color:gold;
+    margin-bottom:10px;
+}
+
+.testimonial p{
+    color:#444;
+    font-style:italic;
+}
+
+.testimonial-author{
+    margin-top:15px;
+    padding-top:12px;
+    border-top:1px solid #eee;
+    font-size:.9rem;
+    color:var(--primary);
+}
+
+.testimonial-author strong{
+    display:block;
+    color:var(--dark);
+    font-style:normal;
+}
+
+/* FAQ */
+
+.faq-item{
+    border-bottom:1px solid #ddd;
+    padding:15px 0;
+}
+
+.faq-question{
+    cursor:pointer;
+    font-weight:600;
+}
+
+.faq-answer{
+    display:none;
+    padding-top:10px;
+    color:#666;
+}
+
+/* CONTACT */
+
+.contact{
+    background:var(--primary);
+    color:white;
+}
+
+.contact-form{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:8px;
+    margin-bottom:15px;
+}
+
+.contact-form button{
+    width:100%;
+    border:none;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    background:#061d46;
+    color:white;
+    text-align:center;
+    padding:25px;
+}
+
+/* ANIMATION */
+
+.reveal{
+    opacity:0;
+    transform:translateY(30px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:2.5rem;
+}
+
+.nav-links{
+    position:absolute;
+    top:70px;
+    right:-100%;
+    background:var(--primary);
+    width:250px;
+    flex-direction:column;
+    padding:30px;
+    transition:.4s;
+}
+
+.nav-links.active{
+    right:0;
+}
+
+.menu-btn{
+    display:block;
+}
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="container navbar">
+<div class="logo">Aran<span>ChasingTheWorld</span></div>
+
+<nav class="nav-links" id="navLinks">
+<a href="#inicio">Inicio</a>
+<a href="#tours">Tours</a>
+<a href="#destinos">Destinos</a>
+<a href="#experiencias">Experiencias</a>
+<a href="blog.html">Blog</a>
+<a href="#contacto">Contacto</a>
+</nav>
+
+<div class="menu-btn" id="menuBtn">☰</div>
+</div>
+</header>
+
+<section class="hero" id="inicio">
+<div class="container hero-content">
+<h1>Descubre España y Europa</h1>
+<p>
+Experiencias inolvidables, tours guiados y viajes diseñados para quienes desean explorar el mundo con comodidad y autenticidad.
+</p>
+
+<a href="#tours" class="btn btn-primary">Ver Tours</a>
+<a href="#contacto" class="btn btn-outline">Contactar</a>
+</div>
+</section>
+
+<section class="about reveal">
+<div class="container">
+<div class="section-title">
+<h2>Sobre Nosotros</h2>
+</div>
+
+<div class="about-content">
+<p>
+¡HOLA! SOY ARANCHA, UNA VALENCIANA A LA QUE LE APASIONA EXPLORAR EL MUNDO. SOY ASESORA DE VIAJES ESPECIALIZADA EN CREAR EXPERIENCIAS QUE CONECTAN CON TU MANERA DE SENTIR EL MUNDO: RUTAS QUE FLUYEN, DESTINOS QUE EMOCIONAN Y PLANES QUE ENCAJAN CONTIGO. CON AÑOS DE EXPERIENCIA GUIANDO A VIAJEROS POR ESPAÑA Y OTROS DESTINOS DEL MUNDO, MI MISIÓN ES SENCILLA: QUE DISFRUTES SIN ESTRÉS Y SIN PERDER EL TIEMPO, VIVIENDO AL MÁXIMO TU VIAJE.
+</p>
+</div>
+</div>
+</section>
+
+<section id="tours" class="reveal">
+<div class="container">
+<div class="section-title">
+<h2>Tours Destacados</h2>
+<p>Los favoritos de nuestros viajeros</p>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1000&q=80">
+<div class="card-content">
+<h3>Barcelona Histórica</h3>
+<p>Sagrada Familia, Barrio Gótico y mucho más.</p>
+<div class="price">Desde 149€</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=1000&q=80">
+<div class="card-content">
+<h3>Madrid Cultural</h3>
+<p>Museos, gastronomía y vida nocturna.</p>
+<div class="price">Desde 129€</div>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1525874684015-58379d421a52?auto=format&fit=crop&w=1000&q=80">
+<div class="card-content">
+<h3>París Romántico</h3>
+<p>La Ciudad de la Luz en todo su esplendor.</p>
+<div class="price">Desde 299€</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="destinos" class="destinations reveal">
+<div class="container">
+<div class="section-title">
+<h2>Destinos Populares</h2>
+</div>
+
+<div class="destination-grid">
+<div class="destination">Barcelona</div>
+<div class="destination">Madrid</div>
+<div class="destination">Sevilla</div>
+<div class="destination">Valencia</div>
+<div class="destination">París</div>
+<div class="destination">Roma</div>
+<div class="destination">Ámsterdam</div>
+<div class="destination">Praga</div>
+</div>
+</div>
+</section>
+
+<section id="experiencias" class="reveal">
+<div class="container">
+<div class="section-title">
+<h2>Experiencias</h2>
+</div>
+
+<div class="features">
+<div class="feature">
+<h3>🏛 Turismo Cultural</h3>
+</div>
+
+<div class="feature">
+<h3>🍷 Gastronomía</h3>
+</div>
+
+<div class="feature">
+<h3>📷 Tours Fotográficos</h3>
+</div>
+
+<div class="feature">
+<h3>👨‍👩‍👧 Viajes Familiares</h3>
+</div>
+
+<div class="feature">
+<h3>💎 Experiencias Premium</h3>
+</div>
+
+<div class="feature">
+<h3>🚍 Tours Privados</h3>
+</div>
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<div class="section-title">
+<h2>Galería</h2>
+</div>
+
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1511739001486-6bfe10ce785f">
+<img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34">
+<img src="https://images.unsplash.com/photo-1521295121783-8a321d551ad2">
+<img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a">
+</div>
+</div>
+</section>
+
+<section class="testimonials reveal">
+<div class="container">
+<div class="section-title">
+<h2>Opiniones de Clientes</h2>
+</div>
+
+<div class="testimonial-grid">
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>"Agencia seria y autobús puntual con wifi gratis. Paseo relajante por un lugar precioso, y nuestra guía Arancha estuvo muy buena y profesional explicándolo todo, ¡con un italiano excelente a pesar de ser valenciana!"</p>
+<div class="testimonial-author">
+<strong>Giusy D.</strong>
+🇮🇹 Reggio Emilia, Italia · Tour Goðafoss (Akureyri)
+</div>
+</div>
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>"¡Impresionante, increíble! Proceso muy fácil de principio a fin. Nuestra guía Arancha fue increíble, súper conocedora y muy atenta. ¡Lo recomiendo totalmente, sobre todo en grupo pequeño!"</p>
+<div class="testimonial-author">
+<strong>Iba N.</strong>
+🇲🇽 Ciudad de México, México · Tour en grupo pequeño
+</div>
+</div>
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>"Arantxa es muy amable, divertida y atenta. ¡Muy recomendable!"</p>
+<div class="testimonial-author">
+<strong>Chari</strong>
+🇪🇸 España · Viajó con hijos pequeños
+</div>
+</div>
+
+<div class="testimonial">
+<div class="stars">★★★★★</div>
+<p>"Arancha es una guía maravillosa, se le nota enamorada de Altea y Valencia y eso lo transmite de una forma divertida y con detalle. Fue muy atenta durante el recorrido y nos gustaron mucho sus explicaciones y dedicación."</p>
+<div class="testimonial-author">
+<strong>Sergio</strong>
+🇪🇸 Málaga, España · Viajó en pareja
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="reveal">
+<div class="container">
+<div class="section-title">
+<h2>Preguntas Frecuentes</h2>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">¿Incluyen alojamiento?</div>
+<div class="faq-answer">Sí, dependiendo del paquete seleccionado.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">¿Realizan tours privados?</div>
+<div class="faq-answer">Sí, adaptamos el viaje a tus necesidades.</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">¿Se puede pagar online?</div>
+<div class="faq-answer">Sí, mediante plataformas seguras.</div>
+</div>
+
+</div>
+</section>
+
+<section id="contacto" class="contact">
+<div class="container">
+
+<div class="section-title">
+<h2 style="color:white;">Contáctanos</h2>
+<p>Comienza tu próxima aventura hoy mismo</p>
+</div>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Nombre completo" required>
+
+<input type="email" placeholder="Correo electrónico" required>
+
+<input type="tel" placeholder="Teléfono">
+
+<textarea rows="6" placeholder="Cuéntanos qué destino te interesa"></textarea>
+
+<button class="btn btn-primary">
+Enviar Solicitud
+</button>
+
+</form>
+
+</div>
+</section>
+
+<footer>
+<p>
+© 2025 AranChasingTheWorld | Persiguiendo experiencias, descubriendo el mundo.
+</p>
+</footer>
+
+<script>
+
+// MENU MOBILE
+
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
+
+// FAQ
+
+document.querySelectorAll('.faq-question').forEach(item => {
+
+item.addEventListener('click', () => {
+
+const answer = item.nextElementSibling;
+
+answer.style.display =
+answer.style.display === 'block'
+? 'none'
+: 'block';
+
+});
+});
+
+// SCROLL ANIMATION
+
+function reveal(){
+
+const reveals = document.querySelectorAll('.reveal');
+
+reveals.forEach(el=>{
+
+const windowHeight = window.innerHeight;
+const elementTop = el.getBoundingClientRect().top;
+const visible = 120;
+
+if(elementTop < windowHeight - visible){
+el.classList.add('active');
+}
+
+});
+}
+
+window.addEventListener('scroll', reveal);
+reveal();
+
+</script>
+
+</body>
+</html>
